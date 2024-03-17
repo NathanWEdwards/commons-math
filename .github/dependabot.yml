@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    commit-message:
+      include: "scope"
+      prefix: "[GitHub] "
+    directory: "/.github/workflows"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+  - package-ecosystem: "maven"
+    commit-message:
+      include: "scope"
+      prefix: "[Java] "
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    groups:
+      APACHE-Java-related:
+        applies-to: security-updates
+        patterns:
+          - "*"
